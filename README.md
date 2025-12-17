@@ -2,6 +2,8 @@
 
 Local, simple, and fast command-line todo application with export to Markdown.
 
+<img src="./public/assets/todo-md.gif" width="500px" />
+
 ## Installation
 
 ### Build from Source
