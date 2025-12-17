@@ -53,3 +53,7 @@ sudo cp bin/todo /usr/local/bin/
 → todo remove <id> - remove a todo (with confirmation)
 → todo export - export todos to todo.md file
 ```
+
+## Storage
+
+Todos are stored in `~/.todo.json` in JSON format. The file is automatically created when you add your first todo.
