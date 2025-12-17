@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/stefanicjuraj/todo/internal/storage"
+	"github.com/stefanicjuraj/todo-md/internal/storage"
 	"github.com/spf13/cobra"
 )
 
