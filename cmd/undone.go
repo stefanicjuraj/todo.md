@@ -1,0 +1,35 @@
+package cmd
+
+import (
+	"fmt"
+	"strconv"
+
+	"github.com/stefanicjuraj/todo/internal/storage"
+	"github.com/spf13/cobra"
+)
+
+var undoneCmd = &cobra.Command{
+	Use:   "undone [id]",
+	Args:  cobra.ExactArgs(1),
+	Run: func(cmd *cobra.Command, args []string) {
+		id, err := strconv.Atoi(args[0])
+		if err != nil {
+			fmt.Fprintf(cmd.OutOrStderr(), "Error: %s is not a valid id\n", args[0])
+			return
+		}
+
+		store := storage.NewStorage()
+
+		err = store.MarkTodoDone(id, false)
+		if err != nil {
+			fmt.Fprintf(cmd.OutOrStderr(), "Error: %v\n", err)
+			return
+		}
+
+		fmt.Printf("Marked %d as not done.\n", id)
+	},
+}
+
+func init() {
+	rootCmd.AddCommand(undoneCmd)
+}
